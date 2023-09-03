@@ -1,0 +1,21 @@
+body{
+
+                      height: 100vh;
+                      background-repeat: no-repeat;
+                      background-size: cover;
+                      background-position:center ;
+	margin: 0px;
+	
+}
+.bg{
+	background-color: #6633cc;
+	height: 85px;
+}
+li{
+	display: inline-block;
+	padding: 25px;
+	color: white;
+	font-size: 25px;
+	position: relative;
+	top: 3px;
+}

@@ -1,0 +1,133 @@
+@import "compass/css3";
+
+@import url(https://fonts.googleapis.com/css?family=Lato:100,400),
+        "compass/utilities/general/clearfix";
+
+.player {
+  width: 320px;
+  margin: 3% auto;
+  background: hsl(0,0,98);
+  @include box-shadow(hsla(164,50,20,0.4) 0 0 20px 0); 
+  cursor: default;
+  
+  .player-artist {
+    position: relative;
+    height: 160px;
+    overflow: hidden;
+    
+    img {
+      width: 100%;
+      margin: -25px 0 0;
+    }
+    
+    p {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      margin: 0;
+      padding: 10px;
+      background: hsla(0,0,0,0.7);
+      color: #fff;
+    }
+  }
+  
+  .player-controls {
+    padding: 5px 0;
+    @include clearfix;
+    
+    a {
+      display: block;
+      width: 50px;
+      height: 40px;
+      font-size: 15px;
+      line-height: 40px;
+      text-align: center;
+      color: #bbb;
+      text-decoration: none;
+      float: left;
+      
+      &.play { font-size: 20px; color: #999; }
+      &:first-child { border-right: 1px solid #ddd; margin-right: 34px;}
+      &:last-child { border-left: 1px solid #ddd; margin-left: 34px; }
+      
+      &:hover  { color: #444; }
+      &:active { color: hsl(200,60,70); }
+    }
+  }
+  
+  .player-tracking {
+    padding: 10px;
+    background: hsl(0,0,90);
+    color: #888;
+    
+    span {
+      @include inline-block;
+      position: relative;
+      padding: 0 5px;
+    }
+    
+    .player-tracking-bar {
+      position: relative;
+      top: 1px;
+      width: 212px;
+      height: 6px;
+      border-radius: 3px;
+      background: hsl(0,0,80);
+      @include box-shadow(hsla(0,0,0,0.1) 0 0 3px 1px inset);
+      
+      // Timestamp
+      &:before {
+        display: none;
+        content: '02:12';
+        position: absolute;
+        top: 10px;
+        left: 78px;
+        padding: 4px 8px;
+        background: #fff;
+        font-size: 10px;
+        color: #aaa;
+        @include box-shadow(hsla(0,0,0,0.1) 0 0 3px 1px);
+      }
+      
+      // Progress bar
+      &:after {
+        display: block;
+        content: ' ';
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 100px;
+        height: 6px;
+        border-radius: 3px;
+        background: hsl(200,60,70);
+      }
+      
+      &:hover {
+        cursor: pointer;
+        &:before { display: block; }
+      }
+      
+    }
+    
+  }
+}
+
+html {
+  height: 100%;
+  font: 11px 'Lato', sans-serif;
+  @include background-image(linear-gradient(hsl(164,59,67), hsl(121,28,85)));
+}
+
+h1 {
+  text-align: center;
+  color: hsl(0,0,30);
+  
+  small { color: hsla(0,0,0,0.3); }
+  
+  a {
+    color: hsl(164,50,30);
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+  }
+}
